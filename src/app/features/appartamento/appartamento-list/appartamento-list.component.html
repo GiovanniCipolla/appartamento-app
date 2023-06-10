@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it" class="h-100">
+
+<head>
+    <!-- Common imports in pages -->
+
+    <title>Pagina dei Risultati</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- Fixed navbar -->
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Lista dei risultati</h5>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-sm btn-outline-secondary" [routerLink]="['/appartamento/insert']">  Add new</button>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Descrizione</th>
+                                    <th>Metri quadrati</th>
+                                    <th>data Costruzione</th>
+                                    <th>Disponibile da subito</th>
+                                    <th>azioni</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let appartamentoItem of listaAppartamenti">
+                                    <td>{{ appartamentoItem.descrizione}}</td>
+                                    <td>{{ appartamentoItem.metriQuadrati }}</td>
+                                    <td> {{ appartamentoItem.dataCostruzione | date : "dd/MM/yyyy" }}</td>
+                                    <td>{{ appartamentoItem.disponibileDaSubito ? "SI" : "NO" }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-secondary" [routerLink]="['/appartamento/detail',appartamentoItem.id]">
+                                            Visualizza
+                                        </button>
+                                        <a class="btn btn-sm btn-outline-primary ml-2 mr-2" [routerLink]="['/appartamento/edit',appartamentoItem.id]">Edit</a>
+                                        <a class="btn btn-outline-danger btn-sm" [routerLink]="['/appartamento/delete',appartamentoItem.id]">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- end card-body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <!-- end container -->
+        </div>
+        <br />
+    </main>
+
+    <!-- Footer -->
+</body>
+
+</html>

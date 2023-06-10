@@ -1,0 +1,45 @@
+<main class="flex-shrink-0">
+    <div class="container">
+      
+      <div class='card'>
+          <div class='card-header'>
+              Visualizza dettaglio
+            </div>
+            
+          <div class='card-body'>
+              <dl class="row">
+                  <dt class="col-sm-3 text-right">Id:</dt>
+                  <dd class="col-sm-9">{{appartamentoDetail?.id}}</dd>
+                </dl>
+                
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">NickName:</dt>
+                    <dd class="col-sm-9">{{appartamentoDetail?.descrizione}}</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3 text-right">data Creazione:</dt>
+                  <dd class="col-sm-9">{{appartamentoDetail?.dataCostruzione | date:'dd/MM/yyyy' }}</dd>
+                </dl>
+                
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Ore di gioco:</dt>
+                <dd class="col-sm-9">{{appartamentoDetail?.metriQuadrati}}</dd>
+              </dl>
+              
+              <dl class="row">
+                <dt class="col-sm-3 text-right">attivo:</dt>
+                <dd class="col-sm-9">{{appartamentoDetail?.disponibileDaSubito?'SI':'NO'}}</dd>
+              </dl>
+
+
+              <button (click)="onBack()" class="btn btn-primary btn-lg"  > Torna alla lista</button>
+             
+              </div>
+              
+          <!-- end card body -->
+          </div>
+          
+      <!-- end card -->
+      </div>  
+  
+</main>

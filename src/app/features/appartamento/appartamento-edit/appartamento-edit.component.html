@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aggiornamento Dispositivo</title>
+  <!-- Aggiungi qui i tuoi stili CSS -->
+</head>
+
+<body>
+  <div class="container">
+    <h2>Aggiornamento Dispositivo</h2>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="marca">Descrizione</label>
+          <input type="text" class="form-control" id="marca" [(ngModel)]="descrizioneUpdateInput" name="marca">
+        </div>
+
+
+        <div class="form-group">
+          <label for="prezzo">Metri quadrati</label>
+          <input type="number" class="form-control" id="prezzo" [(ngModel)]="metriQuadratiUpdateInput" name="prezzo">
+        </div>
+
+        <div class="form-group">
+          <label for="dataProduzione">Data di Costruzione</label>
+          <input type="date" class="form-control" id="dataProduzione" [(ngModel)]="dataCreazioneUpdateInput" name="dataProduzione">
+        </div>
+
+        <div class="form-group">
+          <label for="inProduzione">In Produzione</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="inProduzione" id="siRadio" [value]="true" [(ngModel)]="disponibileDaSubitoUpdateInput" [checked]="disponibileDaSubitoUpdateInput === true">
+            <label class="form-check-label" for="siRadio">Si</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="inProduzione" id="noRadio" [value]="false" [(ngModel)]="disponibileDaSubitoUpdateInput" [checked]="disponibileDaSubitoUpdateInput === false">
+            <label class="form-check-label" for="noRadio">No</label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" (click)="onPremiAggiorna()">Aggiorna</button>
+        <button class="btn btn-primary" (click)="onBack()">Torna alla lista</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Includi qui i tuoi script JavaScript -->
+</body>
+
+</html>

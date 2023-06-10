@@ -1,0 +1,101 @@
+<body class="d-flex flex-column h-100">
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            <h5>Inserisci elemento</h5>
+          </div>
+          <div class="card-body">
+            <div class="col-md-6">
+              <label for="marca" class="form-label">Marca</label>
+              <input
+                [(ngModel)]="descrizioneInput"
+                type="text"
+                name="marca"
+                id="marca"
+                class="form-control"
+                placeholder="Inserire la marca"
+              />
+            </div>
+  
+  
+            <div class="col-md-6">
+              <label for="dataProduzione" class="form-label"
+                >Data di Produzione</label
+              >
+              <input
+                class="form-control"
+                id="dataProduzione"
+                type="date"
+                [(ngModel)]="dataCostruzioneInput"
+                placeholder="dd/MM/yy"
+                title="formato : gg/mm/aaaa"
+                name="dataProduzione"
+              />
+            </div>
+  
+            <div class="col-md-6">
+              <label for="prezzo" class="form-label">Prezzo (minuti)</label>
+              <input
+                type="number"
+                class="form-control"
+                name="prezzo"
+                [(ngModel)]="metriQuadrati"
+                id="prezzo"
+                placeholder="Inserire il prezzo"
+              />
+            </div>
+  
+            <div class="col-md-6">
+              <label for="inProduzione" class="form-label">In Produzione</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inProduzione"
+                  id="siRadio"
+                  [value]="true"
+                  [(ngModel)]="disponibileDaSubito"
+                />
+                <label class="form-check-label" for="siRadio"> Si </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inProduzione"
+                  id="noRadio"
+                  [value]="false"
+                  [(ngModel)]="disponibileDaSubito"
+                />
+                <label class="form-check-label" for="noRadio"> No </label>
+              </div>
+            </div>
+  
+            <div class="col-12">
+              <button
+                type="submit"
+                name="submit"
+                value="submit"
+                id="submit"
+                class="btn btn-primary"
+                (click)="onPremiConferma()"
+              >
+                Inserisci
+              </button>
+            </div>
+
+            <button  (click)="onBack()"
+            >  torna alla lista</button>
+  
+            <!-- end card-body -->
+          </div>
+          <!-- end card -->
+        </div>
+  
+        <!-- end container -->
+      </div>
+      <!-- end main -->
+    </main>
+  </body>

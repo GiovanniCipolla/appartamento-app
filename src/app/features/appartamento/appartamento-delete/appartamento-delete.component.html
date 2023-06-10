@@ -1,0 +1,46 @@
+<main class="flex-shrink-0">
+    <div class="container">
+      
+      <div class='card'>
+          <div class='card-header'>
+              Visualizza dettaglio
+            </div>
+            
+          <div class='card-body'>
+              <dl class="row">
+                  <dt class="col-sm-3 text-right">Id:</dt>
+                  <dd class="col-sm-9">{{appartamentoToDelete?.id}}</dd>
+                </dl>
+                
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">NickName:</dt>
+                    <dd class="col-sm-9">{{appartamentoToDelete?.descrizione}}</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3 text-right">data Creazione:</dt>
+                  <dd class="col-sm-9">{{appartamentoToDelete?.dataCostruzione | date:'dd/MM/yyyy' }}</dd>
+                </dl>
+                
+              <dl class="row">
+                <dt class="col-sm-3 text-right">Ore di gioco:</dt>
+                <dd class="col-sm-9">{{appartamentoToDelete?.metriQuadrati}}</dd>
+              </dl>
+              
+              <dl class="row">
+                <dt class="col-sm-3 text-right">attivo:</dt>
+                <dd class="col-sm-9">{{appartamentoToDelete?.disponibileDaSubito?'SI':'NO'}}</dd>
+              </dl>
+
+
+              <button (click)="onBack()" class="btn btn-primary btn-lg"  > Torna alla lista</button>
+              <button (click)="toDelete()" class="btn btn-outline-danger btn-sm" > Elimina</button>
+             
+              </div>
+              
+          <!-- end card body -->
+          </div>
+          
+      <!-- end card -->
+      </div>  
+  
+</main>
